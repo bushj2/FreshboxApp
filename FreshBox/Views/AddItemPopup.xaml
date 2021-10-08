@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xtc:Popup xmlns:xtc="http://xamarin.com/schemas/2020/toolkit"
+           xmlns="http://xamarin.com/schemas/2014/forms"
+           xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+           Size="300,500"
+           BackgroundColor="Tan"
+           x:Class="FreshBox.Views.AddItemPopup">
+    <StackLayout Margin="20, 20, 20, 20">
+        <Entry x:Name="nameEntry"
+               Placeholder="Enter Item name here" />
+        <Label Text="Enter Expiration Date" />
+        <DatePicker x:Name="expiryDatePicker"/>
+        <Button Text="Add Item"
+                Clicked="AddItemButtonClicked" />
+    </StackLayout>
+</xtc:Popup>

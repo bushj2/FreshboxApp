@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:FreshBox.ViewModels"
+             x:Class="FreshBox.Views.AboutPage">
+   
+    <ContentPage.BindingContext>
+        <viewmodels:AboutViewModel />
+    </ContentPage.BindingContext>
+
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">Orange</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+    <Grid BackgroundColor="White" >
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!--Static Top Bar-->
+        <Grid Grid.Row="0" >
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center" Grid.Column="0">
+                <Frame Margin="20">
+                    <CarouselView Loop="False">
+                        <CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <Frame HasShadow="True" BackgroundColor="#9fdf9f" CornerRadius="20" Margin="0">
+                                    <Label Text="Item" FontSize="24" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                                </Frame>
+                            </DataTemplate>
+                        </CarouselView.ItemTemplate>
+                    </CarouselView>
+                </Frame>
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center" Grid.Column="1">
+                <Frame Margin="20">
+                    <CarouselView Loop="False">
+                        <CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <Frame HasShadow="True" BackgroundColor="#9fdf9f" CornerRadius="20" Margin="0">
+                                    <Label Text="Item" FontSize="24" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                                </Frame>
+                            </DataTemplate>
+                        </CarouselView.ItemTemplate>
+                    </CarouselView>
+                </Frame>
+            </StackLayout>
+
+
+        </Grid>
+
+        <!--Carousel-->
+        <CarouselView ItemsSource="{Binding Dates}" HorizontalScrollBarVisibility="Never" Grid.Row="1" IsBounceEnabled="True" Loop="False">
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <Frame HasShadow="False" Margin="0" Padding="10">
+                    <Frame HasShadow="True" BackgroundColor="#9fdf9f" CornerRadius="20" HorizontalOptions="Fill" VerticalOptions="Fill">
+                        <StackLayout>
+                            <Label Text="{Binding Date, StringFormat='{}{0:MM/dd/yyyy}'}" FontSize="24" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                            <Label Text="Items Expiring Today" FontSize="20" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                             <!--NOT WORKING-->
+                            <CollectionView x:Name="collectionView">
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <!--Printed items-->
+                                        <StackLayout Padding="10,10,10,10"
+                                            Margin="0,2,0,2"
+                                            BackgroundColor="tan">
+                                            <Label Text="{Binding Name}" 
+                                                FontSize="Medium"/>
+                                            <Label Padding="25,0"
+                                                TextColor="White"
+                                                Text="{Binding ExpiryDate, StringFormat='{}{0:MM/dd/yyyy}'}"
+                                                FontSize="Small" />
+                                        </StackLayout>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+                        </StackLayout>
+                    </Frame>
+                    </Frame>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+
+        <!--Bottom Nav Bar-->
+        <Grid Margin="5" Grid.Row="2" >
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <StackLayout BackgroundColor="White" Orientation="Vertical"  HorizontalOptions="Center" VerticalOptions="EndAndExpand" Padding="20" Grid.Column="0">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="FreshBoxPageNav" NumberOfTapsRequired="1" />
+                </StackLayout.GestureRecognizers>
+                <!-- <Image I cant get iamges to work :')/> -->
+                <Label Text="FRESHBOXES" HorizontalTextAlignment="Center" FontSize="Micro"/>
+            </StackLayout>
+
+            <!-- BUTTON FOR ADDING ITEM, INSERT LINK HERE :) -->
+            <StackLayout Orientation="Vertical"  HorizontalOptions="Center" Margin="0,0,0,10" Grid.Column="1">
+                <!-- <Image I cant get iamges to work :')/> -->
+                <Button x:Name="ButtonScan" BackgroundColor="#339933" HorizontalOptions="Center" WidthRequest="76" HeightRequest="76" CornerRadius="38" ></Button>
+            </StackLayout>
+
+            <StackLayout BackgroundColor="White" Orientation="Vertical"  HorizontalOptions="Center" VerticalOptions="EndAndExpand" Padding="20" Grid.Column="2">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="ExpirationPageNav" NumberOfTapsRequired="1" />
+                </StackLayout.GestureRecognizers>
+                <!-- <Image I cant get iamges to work :')/> -->
+                <Label Text="EXPIRATION" HorizontalTextAlignment="Center" FontSize="Micro"/>
+            </StackLayout>
+        </Grid>
+    </Grid>
+    
+    
+</ContentPage>

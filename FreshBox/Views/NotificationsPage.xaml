@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FreshBox.Views.NotificationsPage">
+    <ContentPage.Content>
+        <StackLayout Margin="10,35,10,0"
+                     x:Name="stackLayout">
+            <Label Text="You have no notifications yet. Click the button below to create a local notification."
+                   TextColor="green"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Start"/>
+            <Button Text="Create Notification"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Start"
+                    Clicked="OnSendClick"/>
+            <Label Text="Click the button below to schedule a local notification for in 10 seconds time."
+                   TextColor="green"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Start"/>
+            <Button Text="Create Notification"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Start"
+                    Clicked="OnScheduleClick"/>
+            <!--insert list of prev notifications - sort by most to least recent
+                Have the ability for labels to be tapped and selected.
+                Opens a window which has a detailed item page, including
+                - when will expire
+                - what fridge it's in
+                - when you bought it
+                - price, etc..
+                -->
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="FreshBox.Views.AppDetails">
+    <StackLayout>
+        <Label Text="App Details Coming Soon..." FontSize="20" VerticalOptions="Center" HorizontalOptions="Center"></Label>
+        <Label Text="Example:" FontSize="15" VerticalOptions="Center" HorizontalOptions="Center"></Label>
+        <Label Text="FreshBox Inc." FontSize="12" VerticalOptions="EndAndExpand" HorizontalOptions="Center"></Label>
+        <Label Text="v 1.15" FontSize="12" VerticalOptions="End" HorizontalOptions="Center"></Label>
+        <Label Text="Libraries Cited Here" FontSize="12" VerticalOptions="End" HorizontalOptions="Center"></Label>
+    </StackLayout>
+</ContentPage>

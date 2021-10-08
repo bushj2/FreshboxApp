@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FreshBox.Views.Expiration">
+    <StackLayout Margin="20,20,20,20">
+        <Label Text="Items Expiring Soonest"/>
+        <CollectionView x:Name="collectionView">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <!--Printed items-->
+                    <StackLayout Padding="10,10,10,10"
+                                 Margin="0,2,0,2"
+                               BackgroundColor="tan">
+                        <Label Text="{Binding Name}" 
+                               FontSize="Medium"/>
+                        <Label Padding="25,0"
+                               TextColor="White"
+                               Text="{Binding ExpiryDate, StringFormat='{}{0:MM/dd/yyyy}'}"
+                               FontSize="Small" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>    
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FreshBox.Views.FreshBoxPage">
+    <StackLayout Margin="20,20,20,20">
+        <CollectionView x:Name="collectionView"
+                        SelectionMode="Single"
+                        SelectionChanged="OnCollectionViewSelection">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <!--Printed items-->
+                    <SwipeView>
+                        <SwipeView.LeftItems>
+                            <SwipeItems>
+                                <SwipeItem Text="Delete"
+                                           BackgroundColor="PaleVioletRed"
+                                           Clicked="OnDeleteSwipeItem"/>
+                            </SwipeItems>    
+                        </SwipeView.LeftItems>
+                        <StackLayout Padding="10,10,10,10"
+                                 BackgroundColor="tan">
+                            <Label Text="{Binding Name}" FontSize="Medium"/>
+                            <Image Source="{Binding Image}"
+                               WidthRequest="25"
+                               HeightRequest="45"/>
+                        </StackLayout>
+                    </SwipeView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Button 
+            BackgroundColor="Transparent"
+            HeightRequest="120"
+            BorderWidth="5"
+            BorderRadius = "20"
+            BorderColor="Tan"
+            TextColor="Green"
+            Text="PLUS ICON"
+            Clicked="AddFreshBoxButtonClicked"/>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xtc:Popup xmlns:xtc="http://xamarin.com/schemas/2020/toolkit"
+           xmlns="http://xamarin.com/schemas/2014/forms"
+           xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+           Size="300,300"
+           BackgroundColor="Tan"
+           x:Class="FreshBox.Views.SelectFridgePopUp">
+    <StackLayout Margin="20, 20, 20, 20">
+        <Label Text="Name and select your fridge."
+               HorizontalOptions="Center"
+               FontAttributes="Bold"
+               FontSize="Large">
+        </Label>
+        <Entry x:Name="nameEntry"
+               Placeholder="Name your fridge here."/>
+        <Grid>
+            <Button Grid.Row="0"
+                    Grid.Column="0"
+                    HeightRequest="120"
+                    Text="FRIDGE 1 ICON"
+                    BackgroundColor="SaddleBrown"
+                    BorderRadius ="20"
+                    FontSize="Medium"
+                    Clicked="AddButtonClicked"/>
+            <Button Grid.Row="1"
+                    Grid.Column="0"
+                    HeightRequest="120"
+                    Text="FRIDGE 2 ICON"
+                    BackgroundColor="SaddleBrown"
+                    BorderRadius ="20"
+                    FontSize="Medium"/>
+            <Button Grid.Row="0"
+                    Grid.Column="1"
+                    HeightRequest="120"
+                    Text="FRIDGE 3 ICON"
+                    BackgroundColor="SaddleBrown"
+                    BorderRadius ="20"
+                    FontSize="Medium"/>
+            <Button Grid.Row="1"
+                    Grid.Column="1"
+                    Text="FRIDGE 4 ICON"
+                    HeightRequest="120"
+                    BackgroundColor="SaddleBrown"
+                    BorderRadius ="20"
+                    FontSize="Medium"/>
+        </Grid>
+    </StackLayout>
+</xtc:Popup>

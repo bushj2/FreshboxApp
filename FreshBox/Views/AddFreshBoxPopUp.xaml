@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xtc:Popup xmlns:xtc="http://xamarin.com/schemas/2020/toolkit"
+           xmlns="http://xamarin.com/schemas/2014/forms"
+           xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+           Size="300,500"
+           BackgroundColor="Tan"
+           x:Class="FreshBox.Views.AddFreshBoxPopUp">
+    <StackLayout Margin="20, 20, 20, 20">
+        <Label Text="What FreshBox would you like?"
+            HorizontalOptions="Center"
+            FontAttributes="Bold"
+            FontSize="Large"/>
+        <Button Text="Fridge"
+                BackgroundColor="SaddleBrown"
+                BorderRadius ="20"
+                FontSize="Medium"
+                Clicked="SelectFridgeButtonClicked"/>
+        <Button Text="Freezer"
+                BackgroundColor="SaddleBrown"
+                BorderRadius ="20"
+                FontSize="Medium"/>
+        <Button Text="Mini-fridge"
+                BackgroundColor="SaddleBrown"
+                BorderRadius ="20"
+                FontSize="Medium"/>
+        <Button Text="Pantry"
+                BackgroundColor="SaddleBrown"
+                BorderRadius ="20"
+                FontSize="Medium"/>
+        <Button Text="Drawer"
+                BackgroundColor="SaddleBrown"
+                BorderRadius ="20"
+                FontSize="Medium"/>
+        <Button Text="Other"
+                BackgroundColor="SaddleBrown"
+                BorderRadius ="20"
+                FontSize="Medium"/>
+    </StackLayout>
+</xtc:Popup>
