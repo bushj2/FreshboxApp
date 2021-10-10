@@ -3,6 +3,15 @@ using System.ComponentModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using ZXing.Net.Mobile.Forms;
+using Amazon.CognitoIdentityProvider;
+using Amazon.Extensions.CognitoAuthentication;
+using Newtonsoft.Json;
+using Plugin.Fingerprint;
+using Plugin.Fingerprint.Abstractions;
+using System.Threading.Tasks;
+using Xamarin.Essentials;
+
+
 
 namespace FreshBox.Views
 {
@@ -42,7 +51,6 @@ namespace FreshBox.Views
         {
             await Navigation.PushModalAsync(new Expiration());
         }
-
 
     }
 }

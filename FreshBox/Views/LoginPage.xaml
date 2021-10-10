@@ -11,7 +11,15 @@
         <Label x:Name="lblTitle" FontSize="20"/>
     </NavigationPage.TitleView>
     <ContentPage.Content>
-        <StackLayout Margin="20">
+        <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="Cognito Login" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+        <Entry x:Name="UserNameTextBox" Placeholder="UserName" Text="Username" Margin="20,10,20,0" PlaceholderColor="White" TextColor="Black"/>
+        <Entry x:Name="PasswordTextBox" Placeholder="Password" Text="Password" Margin="20,10,20,10" PlaceholderColor="White" TextColor="Black"/>
+        <Button Clicked="Button_Clicked" Text="Login" Margin="20,10,20,0"/>
+        <Button Clicked="Button_Clicked_1" Text="Sign Up" Margin="20,10,20,0"/>
+        <Button Clicked="Button_Clicked_2" Text="Biometric Login" Margin="20,10,20,0"/>
             <Label Text="Id Token Values:" FontSize="18" FontAttributes="Bold"/>
             <ListView x:Name="lstToken" SeparatorColor="White" BackgroundColor="Transparent" Margin="0">
                 <ListView.ItemTemplate>
@@ -23,8 +31,8 @@
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-            </ListView>
-            </StackLayout>
+                </ListView>
+          </StackLayout>
 
         <!--<StackLayout Padding="10,0,10,0" VerticalOptions="Center">
             <Button VerticalOptions="Center" Text="Login" Command="{Binding LoginCommand}"/>

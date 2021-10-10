@@ -1,7 +1,15 @@
 ﻿using FreshBox.Models;
 using System;
 using System.IO;
+using Amazon.CognitoIdentityProvider;
+using Amazon.CognitoSync;
+using Amazon.Runtime;
+using Amazon.CognitoIdentity;
+using Newtonsoft.Json;
+using Xamarin.Essentials;
 using Xamarin.Forms;
+using Amazon; 
+using Amazon.CognitoSync.Model;
 
 namespace FreshBox
 {
@@ -10,7 +18,7 @@ namespace FreshBox
         private static FreshBoxDatabase freshBoxDatabase;
 
         public static FreshBoxDatabase FreshBoxDatabase
-        {
+        { 
             get
             {
                 if (freshBoxDatabase == null)
@@ -35,15 +43,26 @@ namespace FreshBox
             }
         }
         public static AWSUser user;
+        public static AmazonCognitoIdentityProviderClient provider;
 
         public App()
         {
             InitializeComponent();
+            provider = new AmazonCognitoIdentityProviderClient(new AnonymousAWSCredentials(), AWS.RegionEndpoint);
             MainPage = new AppShell();
         }
 
-        protected override void OnStart()
+        protected async override void OnStart()
         {
+            string secureUser = await SecureStorage.GetAsync("User");
+            if (secureUser != null)
+            {
+                user = JsonConvert.DeserializeObject<AWSUser>(secureUser);
+            }
+            else
+            {
+                user = null;
+            }
         }
 
         protected override void OnSleep()
