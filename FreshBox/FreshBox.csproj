@@ -12,6 +12,13 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />  
     <PackageReference Include="ZXing.Net.Mobile" Version="2.4.1" />  
     <PackageReference Include="ZXing.Net.Mobile.Forms" Version="2.4.1" />
+    <PackageReference Include="Amazon.Extensions.CognitoAuthentication" Version="2.2.2" />
+    <PackageReference Include="AWSSDK.CognitoIdentityProvider" Version="3.7.1.51" />
+    <PackageReference Include="AWSSDK.CognitoSync" Version="3.7.1.75" />
+    <PackageReference Include="AWSSDK.Mobile" Version="3.7.0.79" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Plugin.Fingerprint" Version="2.1.4" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.13.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -54,5 +61,14 @@
     <EmbeddedResource Update="Views\Setting.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Amazon.Extensions.CognitoAuthentication" />
+    <None Remove="AWSSDK.CognitoIdentityProvider" />
+    <None Remove="AWSSDK.CognitoSync" />
+    <None Remove="AWSSDK.Mobile" />
+    <None Remove="Newtonsoft.Json" />
+    <None Remove="Plugin.Fingerprint" />
+    <None Remove="System.IdentityModel.Tokens.Jwt" />
   </ItemGroup>
 </Project>
