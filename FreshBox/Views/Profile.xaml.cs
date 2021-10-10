@@ -12,9 +12,5 @@ namespace FreshBox.Views
             InitializeComponent();
         }
 
-        private void InitializeComponent()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
