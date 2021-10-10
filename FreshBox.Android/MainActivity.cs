@@ -7,6 +7,8 @@ using Android.OS;
 using Android.Content;
 using Xamarin.Forms;
 using FreshBox.Services;
+using Plugin.CurrentActivity;
+using Plugin.Fingerprint;
 
 namespace FreshBox.Droid
 {
@@ -15,12 +17,16 @@ namespace FreshBox.Droid
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            TabLayoutResource = Resource.Layout.Tabbar;
+            ToolbarResource = Resource.Layout.Toolbar;
             base.OnCreate(savedInstanceState);
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
 
+            CrossCurrentActivity.Current.Init(this, savedInstanceState);
+            CrossFingerprint.SetCurrentActivityResolver(() => CrossCurrentActivity.Current.Activity);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
             CreateNotificationFromIntent(Intent);
