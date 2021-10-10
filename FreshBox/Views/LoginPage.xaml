@@ -6,9 +6,28 @@
              mc:Ignorable="d"
              x:Class="FreshBox.Views.LoginPage"
              Shell.NavBarIsVisible="False">
+
+    <NavigationPage.TitleView>
+        <Label x:Name="lblTitle" FontSize="20"/>
+    </NavigationPage.TitleView>
     <ContentPage.Content>
-        <StackLayout Padding="10,0,10,0" VerticalOptions="Center">
+        <StackLayout Margin="20">
+            <Label Text="Id Token Values:" FontSize="18" FontAttributes="Bold"/>
+            <ListView x:Name="lstToken" SeparatorColor="White" BackgroundColor="Transparent" Margin="0">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout VerticalOptions="Center">
+                                <Label Text="{Binding}}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            </StackLayout>
+
+        <!--<StackLayout Padding="10,0,10,0" VerticalOptions="Center">
             <Button VerticalOptions="Center" Text="Login" Command="{Binding LoginCommand}"/>
-        </StackLayout>
+        </StackLayout>-->
     </ContentPage.Content>
 </ContentPage>

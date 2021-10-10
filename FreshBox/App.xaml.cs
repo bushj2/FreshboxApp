@@ -34,6 +34,7 @@ namespace FreshBox
                 return itemDatabase;
             }
         }
+        public static AWSUser user;
 
         public App()
         {
