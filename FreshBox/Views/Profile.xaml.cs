@@ -5,9 +5,9 @@ using Xamarin.Forms.Xaml;
 namespace FreshBox.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Expire : ContentPage
+    public partial class Profile : ContentPage
     {
-        public Expire()
+        public Profile()
         {
             InitializeComponent();
         }
