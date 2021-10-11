@@ -60,7 +60,7 @@ namespace FreshBox.Views
             if (!v.StartsWith("Error"))
             {
                 await SecureStorage.SetAsync("User", JsonConvert.SerializeObject(App.user));
-                await Navigation.PushAsync(new LoginPage());
+                await Navigation.PushAsync(new Logged());
                 Navigation.RemovePage(this);
             }
             else if (v == "pass-change-required")
@@ -104,7 +104,7 @@ namespace FreshBox.Views
 
         private async void Button_Clicked_1(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new LoginPage());
+            await Navigation.PushAsync(new Logged());
         }
 
         public async Task<string> RefreshToken(string idToken, string accessToken, string refreshToken, DateTime issued, DateTime expires)
@@ -154,7 +154,7 @@ namespace FreshBox.Views
                     if (r == "Refreshed")
                     {
                         await SecureStorage.SetAsync("User", JsonConvert.SerializeObject(App.user));
-                        await Navigation.PushAsync(new LoginPage());
+                        await Navigation.PushAsync(new Logged());
                         Navigation.RemovePage(this);
                     }
                 }
